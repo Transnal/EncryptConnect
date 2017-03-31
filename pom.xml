@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.transnal</groupId>
+    <artifactId>cloud</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <name>cloud</name>
+    <url>http://www.transnal.com</url>
+    <organization>
+        <name>transnal</name>
+        <url>http://www.transnal.com</url>
+    </organization>
+
+    <modules>
+        <module>./admin</module>
+        <module>./common</module>
+    </modules>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>3.0</version>
+                <configuration>
+                    <locales>zh_CN</locales>
+                    <outputEncoding>UTF-8</outputEncoding>
+                    <inputEncoding>UTF-8</inputEncoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <repositories>
+
+        <repository>
+            <id>transnal Releases</id>
+            <name>transnal Releases</name>
+            <url>http://221.204.232.42:8081/nexus/content/groups/public/</url>
+        </repository>
+
+    </repositories>
+    <pluginRepositories>
+
+        <pluginRepository>
+            <id>transnal Releases</id>
+            <name>transnal Releases</name>
+            <url>http://221.204.232.42:8081/nexus/content/groups/public/</url>
+        </pluginRepository>
+
+    </pluginRepositories>
+
+    <!-- 开发人员信息 -->
+    <developers>
+        <developer>
+            <name>transnal</name>
+            <email>wuzi@transnal.com</email>
+            <url>http://www.transnal.com</url>
+            <roles>
+                <role>software engineer</role>
+            </roles>
+            <timezone>8</timezone>
+        </developer>
+    </developers>
+
+    <!--许可证 -->
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+    </licenses>
+
+    <!-- 持续集成信息 -->
+    <ciManagement>
+        <system>continuum</system>
+        <url>http://www.transnal.com</url>
+        <notifiers>
+            <notifier>
+                <type>mail</type>
+                <sendOnError>true</sendOnError>
+                <sendOnFailure>true</sendOnFailure>
+                <sendOnSuccess>true</sendOnSuccess>
+                <sendOnWarning>false</sendOnWarning>
+                <configuration>
+                    <address>wuzi@transnal.com</address>
+                </configuration>
+            </notifier>
+        </notifiers>
+    </ciManagement>
+
+    <!-- 问题反馈信息 -->
+    <issueManagement>
+        <system>issue</system>
+        <url>http://www.transnal.com</url>
+    </issueManagement>
+
+    <!-- 分发管理 -->
+    <distributionManagement>
+        <!-- mvn site:deploy 部署的位置-->
+        <site>
+            <id>local</id>
+            <name>filesystem</name>
+            <!-- 修改到磁盘的相应位置 -->
+            <url>file:F:\Java\target\site</url>
+        </site>
+    </distributionManagement>
+
+    <!-- 版本控制信息 -->
+    <scm>
+        <url>http://221.204.232.42:8090/svn/TransnalEs</url>
+        <connection>svn:http://221.204.232.42:8090/svn/TransnalEs</connection>
+        <developerConnection>scm:svn:http://username:password@221.204.232.42:8090/svn/TransnalEs</developerConnection>
+    </scm>
+
+
+</project>
+
